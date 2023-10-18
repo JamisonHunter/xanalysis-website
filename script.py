@@ -9,7 +9,7 @@ import creds
 
 app = Flask(__name__)
 
-# setting the style for seaborn graphs
+# Setting the style for graphs
 plt.style.use(['dark_background', 'seaborn-muted', 'seaborn-poster'])
 
 @app.route('/')
@@ -23,12 +23,12 @@ def analyze():
 
     twitter_data = []  
 
-    # Replace 'user_query' with 'query' in the payload
     payload = {
        'api_key': creds.api_key,
-       'query': user_query,  # Use the user's query here
+       'query': user_query,  
        'num': '10'
     }
+    
     response = requests.get(
         'https://api.scraperapi.com/structured/twitter/search', params=payload)
     data = response.json()
