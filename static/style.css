@@ -1,6 +1,66 @@
 body {
-    background-color: black;
+    font-family: Arial, sans-serif;
+    background-color: #333; /* Dark background */
+    color: #fff; /* Light text */
+    margin: 0;
+    padding: 0;
+    text-align: center;
 }
 
+h1 {
+    color: #007BFF; /* Blue header text */
+    font-size: 36px;
+    margin-top: 50px;
+}
 
+p {
+    font-size: 18px;
+    margin: 20px 0;
+}
+
+form {
+    background-color: #222; /* Dark form background */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Slightly darker shadow */
+    display: inline-block;
+    text-align: center;
+}
+
+label {
+    font-size: 18px;
+    color: #fff; /* Light label text */
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #666; /* Slightly lighter border */
+    border-radius: 5px;
+    background-color: #444; /* Dark input field background */
+    color: #fff; /* Light text */
+}
+
+input[type="submit"] {
+    background-color: #007BFF; /* Blue button background */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3; /* Slightly darker blue on hover */
+}
+
+img {
+    max-width: 60%; 
+    display: block;
+    margin: 0 auto; 
+}
 

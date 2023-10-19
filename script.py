@@ -1,6 +1,7 @@
 # Imports
 import requests
 import pandas as pd
+from wordcloud import WordCloud
 from textblob import TextBlob
 import seaborn as sns
 import matplotlib.pyplot as plt
@@ -67,6 +68,15 @@ def analyze():
     ax.set_title(f"Sentiment Regarding {user_query.upper()}")
 
     plt.savefig("static/sentiment_graph.png")
+
+    # Create a list of all the snippets for word cloud generation
+    all_snippets = " ".join(df['snippet'])
+
+    # Create a WordCloud object
+    wordcloud = WordCloud(width=800, height=400, background_color='black').generate(all_snippets)
+
+    # Save the word cloud as an image file
+    wordcloud.to_file('static/wordcloud.png')
 
     return render_template('result.html')
 
