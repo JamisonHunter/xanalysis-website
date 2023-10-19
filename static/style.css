@@ -1,14 +1,14 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #333; /* Dark background */
-    color: #fff; /* Light text */
+    background-color: #333; 
+    color: #fff; 
     margin: 0;
     padding: 0;
     text-align: center;
 }
 
 h1 {
-    color: #007BFF; /* Blue header text */
+    color: #007BFF; 
     font-size: 36px;
     margin-top: 50px;
 }
@@ -19,17 +19,17 @@ p {
 }
 
 form {
-    background-color: #222; /* Dark form background */
+    background-color: #222; 
     padding: 20px;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Slightly darker shadow */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
     display: inline-block;
     text-align: center;
 }
 
 label {
     font-size: 18px;
-    color: #fff; /* Light label text */
+    color: #fff; 
     display: block;
     margin-bottom: 10px;
 }
@@ -38,14 +38,14 @@ input[type="text"] {
     width: 100%;
     padding: 10px;
     font-size: 16px;
-    border: 1px solid #666; /* Slightly lighter border */
+    border: 1px solid #666;
     border-radius: 5px;
-    background-color: #444; /* Dark input field background */
-    color: #fff; /* Light text */
+    background-color: #444; 
+    color: #fff; 
 }
 
 input[type="submit"] {
-    background-color: #007BFF; /* Blue button background */
+    background-color: #007BFF; 
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -55,7 +55,7 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    background-color: #0056b3; /* Slightly darker blue on hover */
+    background-color: #0056b3; 
 }
 
 img {
