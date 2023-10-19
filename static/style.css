@@ -35,8 +35,8 @@ label {
 }
 
 input[type="text"] {
-    width: 100%;
-    padding: 10px;
+    width: 90%;
+    padding: 8px;
     font-size: 16px;
     border: 1px solid #666;
     border-radius: 5px;
