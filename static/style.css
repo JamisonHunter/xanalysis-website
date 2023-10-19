@@ -64,3 +64,31 @@ img {
     margin: 0 auto; 
 }
 
+ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+li {
+    margin: 8px 0;
+}
+
+/* Footer styles */
+footer {
+    background-color: #333; 
+    color: #fff; 
+    text-align: center;
+    padding: 10px 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+footer a {
+    color: #fff; 
+    text-decoration: underline; 
+}
+
+footer a:hover {
+    color: #00f; 
+}

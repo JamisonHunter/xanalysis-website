@@ -8,14 +8,26 @@
     <link rel="stylesheet" href="static/style.css">
 </head>
 <body>
-    <h1>SENTIMENT ANALYSIS</h1>
+    <h1>TWITTER SENTIMENT ANALYSIS</h1>
     <p>
         This application performs sentiment analysis on collected Twitter data when a topic is entered to analyze.
     </p>
+    <ul>
+        <p>About This App:</p>
+        <li>The application gathers posts from Twitter.</li>
+        <li>It gathers a sample of 10 popular posts.</li>
+        <li>It then attributes a positive, neutral, or negative sentiment to each post.</li>
+        <li>These are then displayed as a graph along with a word cloud of commonly used words within the entire sample.</li>
+    </ul>
     <form action="/analyze" method="POST">
         <label for="query">Enter Topic:</label>
         <input type="text" id="query" name="query">
         <input type="submit" value="Analyze">
     </form>
+    <footer>
+        <p>
+          <a href="https://github.com/JamisonHunter/xanalysis-website" target="_blank">Source Code</a>
+        </p>
+    </footer>
 </body>
 </html>
