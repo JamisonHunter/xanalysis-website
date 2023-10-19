@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #333; 
+    background-color: #2F2F2F;
     color: #fff; 
     margin: 0;
     padding: 0;
@@ -71,11 +71,12 @@ ul {
 
 li {
     margin: 8px 0;
+    list-style-position: inside; 
 }
 
 /* Footer styles */
 footer {
-    background-color: #333; 
+    background-image: linear-gradient(0deg, black, #2F2F2F);  
     color: #fff; 
     text-align: center;
     padding: 10px 0;
