@@ -6,12 +6,14 @@ from textblob import TextBlob
 import seaborn as sns
 import matplotlib.pyplot as plt
 from flask import Flask, render_template, request, jsonify
-import creds
+# import creds
+import config
 
 app = Flask(__name__)
 
 # Setting the style for graphs
-plt.style.use(['dark_background', 'seaborn-muted', 'seaborn-poster'])
+#plt.style.use(['dark_background', 'seaborn-muted', 'seaborn-poster'])
+sns.set_style("darkgrid")
 
 @app.route('/')
 def index():
@@ -25,9 +27,9 @@ def analyze():
     twitter_data = []  
 
     payload = {
-       'api_key': creds.api_key,
-       'query': user_query,  
-       'num': '10'
+        'api_key': config.api_key,
+        'query': user_query,  
+        'num': '10'
     }
     
     response = requests.get(
