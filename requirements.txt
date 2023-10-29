@@ -2,6 +2,6 @@
 flask==2.1.1
 requests==2.26.0
 pandas==2.1.2
-wordcloud==1.8.1 # wordcloud==1.9.2
+wordcloud # wordcloud==1.8.1 # wordcloud==1.9.2
 textblob==0.15.3
 seaborn==0.11.2

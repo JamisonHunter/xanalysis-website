@@ -1,3 +1,7 @@
+{% macro my_button(type, name) %}
+<button data-type="{{type}}">{{name}}</button>
+{% endmacro %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,11 +23,13 @@
         <li>It then attributes a positive, neutral, or negative sentiment to each post.</li>
         <li>These are then displayed as a graph along with a word cloud of commonly used words within the entire sample.</li>
     </ul>
+    
     <form action="/analyze" method="POST">
         <label for="query">Enter Topic:</label>
         <input type="text" id="query" name="query">
         <input type="submit" value="Analyze">
     </form>
+    
     <footer>
         <p>
           <a href="https://github.com/JamisonHunter/xanalysis-website" target="_blank">Source Code</a>
@@ -31,3 +37,4 @@
     </footer>
 </body>
 </html>
+

@@ -5,9 +5,10 @@ from wordcloud import WordCloud
 from textblob import TextBlob
 import seaborn as sns
 import matplotlib.pyplot as plt
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request
 # import creds
 import config
+import creds
 
 app = Flask(__name__)
 
@@ -21,66 +22,72 @@ def index():
 
 @app.route('/analyze', methods=['POST'])
 def analyze():
-    # Get the user's query from the form
-    user_query = request.form['query']
+    try:
 
-    twitter_data = []  
+        # Get the user's query from the form
+        user_query = request.form['query']
 
-    payload = {
-        'api_key': config.api_key,
-        'query': user_query,  
-        'num': '10'
-    }
-    
-    response = requests.get(
-        'https://api.scraperapi.com/structured/twitter/search', params=payload)
-    data = response.json()
+        twitter_data = []  
 
-    title = []
-    snippet = []
-    sentiment_snippet = []
-    sentiment_type = []
+        payload = {
+            'api_key': creds.api_key,
+            'query': user_query,  
+            'num': '10'
+        }
+        
+        response = requests.get(
+            'https://api.scraperapi.com/structured/twitter/search', params=payload)
 
-    for i in range(len(data["organic_results"])):
-        blob = TextBlob(data["organic_results"][i]["snippet"])
-        sentiment = blob.sentiment.polarity
-        title.append(data["organic_results"][i]["title"])
-        snippet.append(data["organic_results"][i]["snippet"])
-        sentiment_snippet.append(sentiment)
+        data = response.json()
 
-        if sentiment == 0:
-            sentiment_type.append("neutral")
+        title = []
+        snippet = []
+        sentiment_snippet = []
+        sentiment_type = []
 
-        elif sentiment > 0:
-            sentiment_type.append("positive")
+        for i in range(len(data["organic_results"])):
+            blob = TextBlob(data["organic_results"][i]["snippet"])
+            sentiment = blob.sentiment.polarity
+            title.append(data["organic_results"][i]["title"])
+            snippet.append(data["organic_results"][i]["snippet"])
+            sentiment_snippet.append(sentiment)
 
-        else:
-            sentiment_type.append("negative")
+            if sentiment == 0:
+                sentiment_type.append("neutral")
 
-    data_dict = {"title": title, 
-                "snippet": snippet,
-                "sentiment": sentiment_snippet,
-                "sentiment_type": sentiment_type}
+            elif sentiment > 0:
+                sentiment_type.append("positive")
+
+            else:
+                sentiment_type.append("negative")
+
+        data_dict = {"title": title, 
+                    "snippet": snippet,
+                    "sentiment": sentiment_snippet,
+                    "sentiment_type": sentiment_type}
 
 
-    df = pd.DataFrame(data_dict)
+        df = pd.DataFrame(data_dict)
 
-    fig = plt.figure()
-    ax = df["sentiment_type"].value_counts().plot(kind="barh")
-    ax.set_title(f"Sentiment Regarding {user_query.upper()}")
+        fig = plt.figure()
+        ax = df["sentiment_type"].value_counts().plot(kind="barh")
+        ax.set_title(f"Sentiment Regarding {user_query.upper()}")
 
-    plt.savefig("static/sentiment_graph.png")
+        plt.savefig("static/sentiment_graph.png")
 
-    # Create a list of all the snippets for word cloud generation
-    all_snippets = " ".join(df['snippet'])
+        # Create a list of all the snippets for word cloud generation
+        all_snippets = " ".join(df['snippet'])
 
-    # Create a WordCloud object
-    wordcloud = WordCloud(width=800, height=400, background_color='black').generate(all_snippets)
+        # Create a WordCloud object
+        wordcloud = WordCloud(width=800, height=400, background_color='black').generate(all_snippets)
 
-    # Save the word cloud as an image file
-    wordcloud.to_file('static/wordcloud.png')
+        # Save the word cloud as an image file
+        wordcloud.to_file('static/wordcloud.png')
 
-    return render_template('result.html')
+        return render_template('result.html')
+        
+    except Exception as e:
+        return render_template('handle.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

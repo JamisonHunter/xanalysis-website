@@ -93,3 +93,7 @@ footer a {
 footer a:hover {
     color: #00f; 
 }
+
+.error {
+    color: rgb(177, 0, 0);
+}
