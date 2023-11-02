@@ -1,5 +1,6 @@
 # python 3.11.1
 flask==2.1.1
+Werkzeug==2.0.1
 requests==2.26.0
 pandas==2.1.2
 wordcloud # wordcloud==1.8.1 # wordcloud==1.9.2

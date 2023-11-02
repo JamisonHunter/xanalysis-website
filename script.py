@@ -4,11 +4,12 @@ import pandas as pd
 from wordcloud import WordCloud
 from textblob import TextBlob
 import seaborn as sns
+import matplotlib
 import matplotlib.pyplot as plt
+matplotlib.use("Agg")
 from flask import Flask, render_template, request
-# import creds
-import config
 import creds
+# import config
 
 app = Flask(__name__)
 

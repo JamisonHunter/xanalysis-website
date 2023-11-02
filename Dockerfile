@@ -8,6 +8,8 @@ WORKDIR /app
 COPY . /app
 
 # Install Python dependencies
+RUN pip install --upgrade werkzeug
+
 RUN pip install -r requirements.txt
 
 # Expose the port that the Flask app will run on
