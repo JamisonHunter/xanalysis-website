@@ -11,10 +11,10 @@ RUN pip install -r /requirements.txt
 
 FROM base
 COPY --from=builder /install /app
-COPY script.py /app
+COPY main.py /app
 COPY config.py /app
 COPY creds.py /app
 COPY static/ /app
 COPY templates/ /app
 WORKDIR /app
-CMD ["python", "script.py"]
+CMD ["python", "main.py"]
