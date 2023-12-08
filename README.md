@@ -13,6 +13,6 @@ Once a topic is entered, the sentiment graph and the word cloud are displayed. F
 
 I use Flask as my go-to frontend web framework at the moment. It is simple to work with and creates solid results.
 
-In order to perform the web scraping aspects of this project, I used ScraperAPI's service. Documentation can be found below!
+In order to perform the web scraping aspects of this project, I used ScraperAPI's service. I've found this to be a simple solution for a lot of my we scraping needs. Documentation can be found below!
 
 https://www.scraperapi.com/documentation?fp_ref=jamison56
