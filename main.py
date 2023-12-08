@@ -10,7 +10,6 @@ matplotlib.use("Agg")
 from flask import Flask, render_template, request
 import creds
 import config
-# import config
 
 app = Flask(__name__)
 
@@ -32,8 +31,8 @@ def analyze():
         twitter_data = []  
 
         payload = {
-            'api_key': creds.api_key and config.api_key,
-            'query': user_query,  
+            'api_key': config.api_key,
+            'query': user_query,    
             'num': '10'
         }
         
