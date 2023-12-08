@@ -14,7 +14,7 @@ import creds
 app = Flask(__name__)
 
 # Setting the style for graphs
-#plt.style.use(['dark_background', 'seaborn-muted', 'seaborn-poster'])
+# plt.style.use(['dark_background', 'seaborn-muted', 'seaborn-poster'])
 sns.set_style("darkgrid")
 
 @app.route('/')
