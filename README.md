@@ -5,9 +5,9 @@ This website uses sentiment analysis in order to allow somebody to search Twitte
 
 Once a topic is entered, the sentiment graph and the word cloud are displayed. For the mostpart, any topic can be searched! I often use corporations or financial keywords as examples/
 
-![Graph](sentiment_graph.png)
+![Graph](static/sentiment_graph.png)
 
-![Wordcloud](wordcloud.png)
+![Wordcloud](static/wordcloud.png)
 
 # Technologies
 
