@@ -31,7 +31,7 @@ def analyze():
         twitter_data = []  
 
         payload = {
-            'api_key': config.api_key,
+            'api_key': creds.api_key,
             'query': user_query,    
             'num': '10'
         }
