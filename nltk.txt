@@ -1,1 +1,6 @@
 wordnet
+stopwords
+brown
+gutenberg
+punkt
+reuters
